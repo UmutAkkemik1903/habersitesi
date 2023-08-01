@@ -1,0 +1,21 @@
+RewriteEngine on
+
+#RewriteCond %{HTTP_HOST} ^emrahyuksel.com.tr [NC]
+#RewriteRule ^(.*)$ http://www.emrahyuksel.com.tr/$1 [L,R=301,NC]
+
+
+#ErrorDocument 404 http://localhost/pdo/porto/404.not
+
+
+
+RewriteRule ^hakkımızda$ hakkımızda.php [NC,L]
+RewriteRule ^arama$ arama.php [NC,L]
+RewriteRule ^iletisim$ iletisim.php [NC,L]
+RewriteRule ^haberler$ haberler.php [NC,L]
+RewriteRule ^sitemap.xml$ sitemap.php [NC,L]
+
+
+
+
+RewriteRule ^([0-9a-zA-Z-_]+)/([0-9]+)$ haber-detay.php?sef=$1&icerik_id=$2 [L,QSA]
+RewriteRule ^sayfa-([0-9a-zA-Z-_]+)-([0-9]+)$ menu-detay.php?sef=$1&menu_id=$2 [L,QSA]
